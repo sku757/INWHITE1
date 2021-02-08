@@ -1,15 +1,25 @@
 const mix = require('laravel-mix');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
-
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.autoload('jquery', [
+        'window.$', 
+        'window.jQuery'
+    ])
+    .scripts([
+        './node_modules/jquery/dist/jquery.min.js',
+        './resources/src/js/flickity.pkgd.min.js',
+        './resources/src/js/libs.min.js',
+        './resources/src/js/wow.min.js',
+        './resources/src/js/jquery.nice-select.min.js',
+        './resources/src/js/remodal.min.js',
+        './resources/src/js/main.js'
+    ], './public/js/app.js')
+    .styles([
+        './resources/src/css/flickity.css',
+        './resources/src/css/animate.min.css',
+        './resources/src/css/nice-select.css',
+        './resources/src/css/remodal.css',
+        './resources/src/css/remodal-default-theme.css',
+        './resources/src/css/style.min.css'
+    ], './public/css/app.css')
+    .sourceMaps()
+    .version();
