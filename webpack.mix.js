@@ -22,5 +22,7 @@ mix.autoload('jquery', [
         './resources/src/css/style.min.css',
         './resources/src/css/dashboard.scss'
     ], './public/css/app.css')
+    .copyDirectory('./resources/src/fonts', './public/fonts')
+    .copyDirectory('./resources/src/img', './public/img')
     .sourceMaps()
     .version();
