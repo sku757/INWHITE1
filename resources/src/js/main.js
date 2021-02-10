@@ -1,6 +1,6 @@
 $(function () {
 
-	$(window).on('load', function() {
+	setTimeout(function() {
 		let stepsCount = 1;
 
 		$('.steps .step').each(function() {
@@ -13,8 +13,8 @@ $(function () {
 			if ($('body').hasClass('has-wow')) {
 				new WOW().init();
 			}
-		}, 100);
-	});
+		}, 200);
+	}, 1000);
 
 	// main slider init
 	$('.main-slider-wrapper').slick({
