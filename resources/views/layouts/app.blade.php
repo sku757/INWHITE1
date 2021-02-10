@@ -10,12 +10,20 @@
 </head>
 <body>
 
+  <div class="preloader">
+    <div class="lds-dual-ring"></div>
+  </div>
+  <!-- preloader -->
+
   <div class="popup-menu">
     <div class="popup-menu__wrap">
       <nav>
         <ul>
           <li><a href="{{ route('home') }}">Главная</a></li>
           <li><a href="{{ url('/#searchWrapper') }}">Поиск напарника</a></li>
+          @if (Auth::user() && Auth::user()->is_admin)
+          <li><a href="{{ route('dashboard') }}">Панель управления</a></li>
+          @endif
         </ul>
       </nav>
       <a href="mailto:inwhite@mail.ru" class="mail">inwhite@mail.ru</a>
@@ -39,6 +47,9 @@
         <ul class="header__menu">
           <li><a href="{{ route('home') }}">Главная</a></li>
           <li><a href="{{ url('/#searchWrapper') }}" >Поиск напарников</a></li>
+          @if (Auth::user() && Auth::user()->is_admin)
+          <li><a href="{{ route('dashboard') }}">Панель управления</a></li>
+          @endif
         </ul>
 
         @guest
@@ -77,6 +88,9 @@
     <ul>
       <li><a href="{{ route('home') }}">Главная</a></li>
       <li><a href="{{ url('/#searchWrapper') }}">Поиск напарников</a></li>
+      @if (Auth::user() && Auth::user()->is_admin)
+      <li><a href="{{ route('dashboard') }}">Панель управления</a></li>
+      @endif
     </ul>
   </div>
   <!-- footer-wrapper -->

@@ -14,12 +14,13 @@ mix.autoload('jquery', [
         './resources/src/js/main.js'
     ], './public/js/app.js')
     .styles([
-        './resources/src/css/flickity.css',
         './resources/src/css/animate.min.css',
         './resources/src/css/nice-select.css',
+        './resources/src/css/flickity.css',
         './resources/src/css/remodal.css',
         './resources/src/css/remodal-default-theme.css',
-        './resources/src/css/style.min.css'
+        './resources/src/css/style.min.css',
+        './resources/src/css/dashboard.scss'
     ], './public/css/app.css')
     .sourceMaps()
     .version();

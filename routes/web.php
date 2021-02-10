@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('auth/steam', 'AuthController@redirectToSteam')->name('auth.steam');
@@ -15,4 +14,10 @@ Route::group([
     Route::post('profile/update/data', 'ProfileController@updateData')->name('profile.update.data');
     Route::post('profile/update/info', 'ProfileController@updateInfo')->name('profile.update.info');
     Route::post('search', 'SearchController@search')->name('search');
+
+    Route::group([
+        'middleware' => 'admin'
+    ], function () {
+        Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    });
 });

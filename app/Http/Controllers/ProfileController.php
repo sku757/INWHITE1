@@ -24,6 +24,10 @@ class ProfileController extends Controller
             'show_in_search' => $request->has('show_in_search')
         ]);
 
+        if ($request->ajax()) {
+            return ['status' => true];
+        }
+
         return redirect()->route('profile');
     }
 
@@ -32,6 +36,10 @@ class ProfileController extends Controller
         $request->user()->profile()->update([
             'contacts' => $request->get('contacts')
         ]);
+
+        if ($request->ajax()) {
+            return ['status' => true];
+        }
 
         return redirect()->route('profile');
     }

@@ -6,9 +6,9 @@ use Illuminate\Support\Collection;
 
 class Repository {
 
-    public static function getDotaRangs(): Collection
+    public static function getDotaRangs(string $rang = null)
     {
-        return Collection::make([
+        $collect =  Collection::make([
             ['name' => 'Рекрут', 'image' => 'img/icons/rangs/dota/1.png'],
             ['name' => 'Страж', 'image' => 'img/icons/rangs/dota/2.png'],
             ['name' => 'Рыцарь', 'image' => 'img/icons/rangs/dota/3.png'],
@@ -17,11 +17,13 @@ class Repository {
             ['name' => 'Властелин', 'image' => 'img/icons/rangs/dota/6.png'],
             ['name' => 'Божество', 'image' => 'img/icons/rangs/dota/7.png'],
         ]);
+
+        return $rang ? $collect->where('name', $rang)->first() : $collect;
     }
 
-    public static function getCsRangs(): Collection
+    public static function getCsRangs(string $rang = null)
     {
-        return Collection::make([
+        $collect = Collection::make([
             ['name' => 'Серебро', 'image' => 'img/icons/rangs/cs/1.png'],
             ['name' => 'Золотая звезда', 'image' => 'img/icons/rangs/cs/2.png'],
             ['name' => 'Магистр', 'image' => 'img/icons/rangs/cs/3.png'],
@@ -31,5 +33,7 @@ class Repository {
             ['name' => 'Великий магистр', 'image' => 'img/icons/rangs/cs/7.png'],
             ['name' => 'Всемирная элита', 'image' => 'img/icons/rangs/cs/8.png'],
         ]);
+
+        return $rang ? $collect->where('name', $rang)->first() : $collect;
     }
 }

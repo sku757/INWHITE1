@@ -1,0 +1,94 @@
+.table {
+    color: #fff;
+    width: 100%;
+    background: rgba(0,0,0,.2);
+    margin-top: 20px;
+    border: none;
+    border-collapse: collapse;
+  }
+
+  .table thead {
+    background: rgba(0,0,0,.4);
+  }
+
+  .table thead th {
+	  border: none;
+  }
+
+  .table thead tr {
+    height: 40px;
+  }
+
+  .table tbody tr {
+    height: 40px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  .table tbody tr:first-child td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .table td img {
+    width: 30px;
+    border-radius: 100%;
+    margin-right: 10px;
+  }
+
+  .table td a img {
+    width: 18px;
+  }
+
+  .links {
+    margin-top: 15px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+  }
+
+  .links nav {
+    width: max-content;
+  }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% + 35px);
+  }
+
+  .page-item:first-child {
+    display: block;
+    margin-right: 5px;
+  }
+
+  .page-item:last-child {
+    display: block;
+    margin-left: 5px;
+  }
+
+  .admin-cabinet .container {
+    overflow: auto;
+  }
+
+  .online {
+    color: green;
+  }
+
+  .offline {
+    color: silver;
+  }
+
+  .cabinet__profile__ava img {
+    width: 100%;
+}
+
+.preloader {
+  border-radius: 0 !important;
+}
+
+#searchWrapper .search-wrapper__filter {
+  width: 100%;
+  max-width: 219.3px;
+}

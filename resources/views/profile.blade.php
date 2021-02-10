@@ -20,7 +20,7 @@
                     </div>
                     <!-- cabinet__user__ava -->
 
-                    <form action="{{ route('profile.update.data') }}" method="POST">
+                    <form id="profile-form" action="{{ route('profile.update.data') }}" method="POST">
                         {{ csrf_field() }}
                         <select name="game" id="" class="wide select__game">
                             <option data-display="Выберите игру"></option>
@@ -44,7 +44,7 @@
                         </select>
                         <!-- select -->
 
-                        <select name="rang[cs]" id="" class="wide select__rang_cs  {{ $user->profile->game == 'Dota' ? 'hide' : '' }}">
+                        <select name="rang[cs]" id="" class="wide select__rang_cs {{ $user->profile->game == 'Dota' || $user->profile->game == null ? 'hide' : '' }}">
                             <option data-display="Выберите ваш ранг"></option>
                             @foreach (App\Repository::getCsRangs() as $item)
                             <option data-image="{{ $item['image'] }}" value="{{ $item['name'] }}" data-display="<span class='select_active_cat'>Ранг:</span> <img src='{{ $item['image'] }}'> <span class='select_active_name'>{{ $item['name'] }}</span>" {{ $user->profile->rang['cs'] == $item['name'] ? 'selected' : '' }}>{{ $item['name'] }}</option>
@@ -107,7 +107,7 @@
             <div class="cabinet__social">
                 <h3>Связь</h3>
 
-                <form action="{{ route('profile.update.info') }}" method="POST">
+                <form id="contact-form" action="{{ route('profile.update.info') }}" method="POST">
                     {{ csrf_field() }}
                     <div class="cabinet__social__item">
                         <img src="img/icons/social/discord.svg" alt="Discord-icon">
@@ -128,6 +128,11 @@
 
             </div>
             <!-- cabinet__social -->
+
+            <div class="search-loader">
+                <div class="lds-dual-ring"></div>
+            </div>
+            <!-- search-loader -->
 
         </div>
         <!-- cabinet-wrapper -->

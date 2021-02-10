@@ -85,100 +85,117 @@
   </section>
   <!-- section-main-slider end -->
 
-  <section class="section-search" id="searchWrapper">
-    <div class="container">
-      <h2 class="section__title">Поиск</h2>
+<section class="section-search" id="searchWrapper">
+  <div class="container">
+    <h2 class="section__title">Поиск</h2>
 
-      <div class="search-wrapper">
-        <div class="search-wrapper__filter">
-          <h3>Критерии поиска:</h3>
+    <div class="search-wrapper">
+      <div class="search-wrapper__filter">
+        <h3>Критерии поиска:</h3>
 
-          <form class="search-wrapper__form">
-            <select name="game" id="" class="wide select__game">
-              <option data-display="Выберите игру"></option>
-              <option data-image="" value="Dota">Dota 2</option>
-              <option data-image="" value="CS">CS:GO</option>
-            </select>
-            <!-- select -->
+        <form class="search-wrapper__form">
+          <select name="game" id="" class="wide select__game">
+            <option data-display="Выберите игру"></option>
+            <option data-image="" value="Dota">Dota 2</option>
+            <option data-image="" value="CS">CS:GO</option>
+          </select>
+          <!-- select -->
 
-            <select name="rang[dota]" id="" class="wide select__rang_dota item-disabled">
-              <option data-display="Ранг:"></option>
-              @foreach (App\Repository::getDotaRangs() as $item)
-              <option data-image="{{ $item['image'] }}" value="{{ $item['name'] }}" data-display="<span class='select_active_cat'>Ранг:</span> <img src='{{ $item['image'] }}'> <span class='select_active_name'>{{ $item['name'] }}</span>">{{ $item['name'] }}</option>
-              @endforeach
-            </select>
-            <!-- select -->
+          <select name="rang[dota]" id="" class="wide select__rang_dota item-disabled">
+            <option data-display="Ранг:"></option>
+            @foreach (App\Repository::getDotaRangs() as $item)
+            <option data-image="{{ $item['image'] }}" value="{{ $item['name'] }}" data-display="<span class='select_active_cat'>Ранг:</span> <img src='{{ $item['image'] }}'> <span class='select_active_name'>{{ $item['name'] }}</span>">{{ $item['name'] }}</option>
+            @endforeach
+          </select>
+          <!-- select -->
 
-            <select name="rang[cs]" id="" class="wide select__rang_cs hide">
-              <option data-display="Ранг:"></option>
-              @foreach (App\Repository::getCsRangs() as $item)
-              <option data-image="{{ $item['image'] }}" value="{{ $item['name'] }}" data-display="<span class='select_active_cat'>Ранг:</span> <img src='{{ $item['image'] }}''> <span class='select_active_name'>{{ $item['name'] }}</span>">{{ $item['name'] }}</option>
-              @endforeach
-            </select>
-            <!-- select -->
+          <select name="rang[cs]" id="" class="wide select__rang_cs hide">
+            <option data-display="Ранг:"></option>
+            @foreach (App\Repository::getCsRangs() as $item)
+            <option data-image="{{ $item['image'] }}" value="{{ $item['name'] }}" data-display="<span class='select_active_cat'>Ранг:</span> <img src='{{ $item['image'] }}''> <span class='select_active_name'>{{ $item['name'] }}</span>">{{ $item['name'] }}</option>
+            @endforeach
+          </select>
+          <!-- select -->
 
 
 
-            <div class="select-box select__role item-disabled">
-              <div class="select-box__head" data-initial-title="Роль:">Роль:</div>
+          <div class="select-box select__role item-disabled">
+            <div class="select-box__head" data-initial-title="Роль:">Роль:</div>
 
-              <div class="select-box__list">
-                <label for="role-1">
-                  <span>1</span>
-                  <input type="checkbox" id="role-1" name="roles[]" value="1">
-                  <span class="select-box_check"></span>
-                </label>
+            <div class="select-box__list">
+              <label for="role-1">
+                <span>1</span>
+                <input type="checkbox" id="role-1" name="roles[]" value="1">
+                <span class="select-box_check"></span>
+              </label>
 
-                <label for="role-2">
-                  <span>2</span>
-                  <input type="checkbox" id="role-2" name="roles[]" value="2">
-                  <span class="select-box_check"></span>
-                </label>
+              <label for="role-2">
+                <span>2</span>
+                <input type="checkbox" id="role-2" name="roles[]" value="2">
+                <span class="select-box_check"></span>
+              </label>
 
-                <label for="role-3">
-                  <span>3</span>
-                  <input type="checkbox" id="role-3" name="roles[]" value="3">
-                  <span class="select-box_check"></span>
-                </label>
+              <label for="role-3">
+                <span>3</span>
+                <input type="checkbox" id="role-3" name="roles[]" value="3">
+                <span class="select-box_check"></span>
+              </label>
 
-                <label for="role-4">
-                  <span>4</span>
-                  <input type="checkbox" id="role-4" name="roles[]" value="4">
-                  <span class="select-box_check"></span>
-                </label>
+              <label for="role-4">
+                <span>4</span>
+                <input type="checkbox" id="role-4" name="roles[]" value="4">
+                <span class="select-box_check"></span>
+              </label>
 
-                <label for="role-5">
-                  <span>5</span>
-                  <input type="checkbox" id="role-5" name="roles[]" value="5">
-                  <span class="select-box_check"></span>
-                </label>
-              </div>
+              <label for="role-5">
+                <span>5</span>
+                <input type="checkbox" id="role-5" name="roles[]" value="5">
+                <span class="select-box_check"></span>
+              </label>
             </div>
-            <!-- select-box -->
-
-            <button type="submit" class="btn search-timeite">Найти напарника</button>
-          </form>
-        </div>
-        <!-- search-wrapper__filter -->
-
-        <div class="search-loader">
-          <div class="lds-dual-ring"></div>
-        </div>
-        <!-- search-loader -->
-
-        <div class="search-wrapper__info">
-          <h2 class="search-wrapper__title">Результаты поиска:</h2>
-          <div class="search-wrapper__info__contacts">
-            <h3>Наши контакты:</h3>
-            <a href="https://vk.com/inwhite"><img src="img/icons/social/vk.svg" alt="">https://vk.com/inwhite</a>
-            <a href="mailto:inwhite@mail.ru"><img src="img/icons/social/mail.svg" alt="">inwhite@mail.ru</a>
           </div>
-          <!-- search-wrapper__info__contacts -->
+          <!-- select-box -->
 
-          <div class="search-wrapper__info__slider hide"></div>
+          @guest
+          <a href="{{ route('auth.steam') }}" class="btn login-to-search">
+            <img src="img/icons/social/steam.png" alt="">Войти для поиска
+          </a>
+          @else
+          <button type="submit" class="btn search-timeite">Найти напарника</button>
+          @endguest
+        </form>
+      </div>
+      <!-- search-wrapper__filter -->
+
+      <div class="search-loader">
+        <div class="lds-dual-ring"></div>
+      </div>
+      <!-- search-loader -->
+
+      <div class="search-wrapper__info wow fadeInRight" data-wow-duration="1s">
+        <h2 class="search-wrapper__title">Результаты поиска:</h2>
+        <div class="search-wrapper__info__contacts">
+          <h3>Наши контакты:</h3>
+          <a href="https://vk.com/inwhite"><img src="img/icons/social/vk.svg" alt="">https://vk.com/inwhite</a>
+          <a href="mailto:inwhite@mail.ru"><img src="img/icons/social/mail.svg" alt="">inwhite@mail.ru</a>
         </div>
-        
+        <!-- search-wrapper__info__contacts -->
+
+        <div class="search-wrapper__info__contacts search-not-found_dota hide">
+          <h3>Игроки по этим параметрам еще не здесь <img src="img/icons/small-icons/sad.svg" alt=""></h3>
+          <span>Но вы можете рассказать друзьям о нашем сервисе ;)</span>
+        </div>
+        <!-- search-not-found_dota -->
+
+        <div class="search-wrapper__info__contacts search-not-found_cs hide">
+          <h3>Игроки по этим параметрам еще не здесь <img src="img/icons/small-icons/sad.svg" alt=""></h3>
+          <span>Но вы можете рассказать друзьям о нашем сервисе ;)</span>
+        </div>
+        <!-- search-not-found_dota -->
+
+        <div class="search-wrapper__info__slider hide"></div>
         <!-- search-wrapper__info__slider -->
+
       </div>
       <!-- search-wrapper__info -->
     </div>
