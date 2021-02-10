@@ -4,7 +4,7 @@
 <section class="section-cabinet admin-cabinet">
     <div class="container">
 
-        <h2>Пользователи</h2>
+        <h2>Пользователи ({{ $users->count() }})</h2>
 
         <table class="table">
             <thead>
@@ -25,7 +25,7 @@
             <tr>
                 <td>{{ $user->id }}</td>
                 <td><img src="{{ $user->avatar }}" alt=""></td>
-                <td class="{{ $user->online ? 'online' : 'offline'}}">{{ $user->username }}</td>
+                <td class="{{ $user->online ? 'online' : 'offline'}}">{{ $user->username }} {{ $user->is_admin ? '(admin)' : '' }}</td>
                 <td>{{ $user->last_login->format('d.m.Y H:i') }}</td>
                 <td>{{ $user->last_ip }}</td>
                 <td>{{ $user->profile->game }}</td>

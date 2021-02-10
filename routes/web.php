@@ -18,6 +18,6 @@ Route::group([
     Route::group([
         'middleware' => 'admin'
     ], function () {
-        Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        Route::get('users', 'DashboardController@users')->name('users');
     });
 });

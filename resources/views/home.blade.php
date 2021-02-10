@@ -15,7 +15,7 @@
       <div class="main-slider-dots"></div>
 
       <div class="steps">
-        <div class="step step-line-1">
+        <div class="step">
           <span class="step__number wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">1</span>
           <!-- step__number -->
 
@@ -23,7 +23,7 @@
         </div>
         <!-- step -->
 
-        <div class="step step-line-2">
+        <div class="step">
           <span class="step__number wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.2s">2</span>
           <!-- step__number -->
 
@@ -31,7 +31,7 @@
         </div>
         <!-- step -->
 
-        <div class="step step-line-3">
+        <div class="step">
           <span class="step__number wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.9s">3</span>
           <!-- step__number -->
 
@@ -39,7 +39,7 @@
         </div>
         <!-- step -->
 
-        <div class="step step-line-4">
+        <div class="step">
           <span class="step__number wow fadeInLeft" data-wow-duration="1s" data-wow-delay="2.6s">4</span>
           <!-- step__number -->
 
@@ -90,7 +90,7 @@
     <h2 class="section__title">Поиск</h2>
 
     <div class="search-wrapper">
-      <div class="search-wrapper__filter">
+      <div class="search-wrapper__filter wow fadeInLeft" data-wow-duration="1.2s"">
         <h3>Критерии поиска:</h3>
 
         <form class="search-wrapper__form">
@@ -176,8 +176,8 @@
         <h2 class="search-wrapper__title">Результаты поиска:</h2>
         <div class="search-wrapper__info__contacts">
           <h3>Наши контакты:</h3>
-          <a href="https://vk.com/inwhite"><img src="img/icons/social/vk.svg" alt="">https://vk.com/inwhite</a>
-          <a href="mailto:inwhite@mail.ru"><img src="img/icons/social/mail.svg" alt="">inwhite@mail.ru</a>
+          <a target="_blank" href="https://vk.com/artemsi_1"><img src="img/icons/social/vk.svg" alt="">https://vk.com/artemsi_1</a>
+          <a target="_blank" href="https://vk.com/miroslavtito"><img src="img/icons/social/vk.svg" alt="">https://vk.com/miroslavtito</a>
         </div>
         <!-- search-wrapper__info__contacts -->
 

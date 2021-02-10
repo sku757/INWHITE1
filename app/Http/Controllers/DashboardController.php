@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function users()
     {
-        return view('dashboard', [
-            'users' => User::with('profile')->paginate()
+        return view('users', [
+            'users' => User::with('profile')->paginate(50)
         ]);
     }
 }

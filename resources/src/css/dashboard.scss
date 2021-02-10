@@ -40,6 +40,10 @@
     width: 18px;
   }
 
+  .table tr:hover {
+    background: rgba(0, 0, 0, .3);
+  }
+
   .links {
     margin-top: 15px;
     font-weight: 500;

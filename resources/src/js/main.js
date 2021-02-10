@@ -1,7 +1,19 @@
 $(function () {
 
 	$(window).on('load', function() {
-		$('.preloader').addClass('hidden');
+		let stepsCount = 1;
+
+		$('.steps .step').each(function() {
+			$(this).addClass(`step-line-${stepsCount}`);
+			stepsCount++;
+		});
+
+		setTimeout(function() {
+			$('.preloader').addClass('hidden');
+			if ($('body').hasClass('has-wow')) {
+				new WOW().init();
+			}
+		}, 100);
 	});
 
 	// main slider init

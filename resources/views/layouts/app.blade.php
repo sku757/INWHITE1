@@ -8,7 +8,7 @@
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body>
+<body class="{{ Route::is('home') ? 'has-wow' : '' }}">
 
   <div class="preloader">
     <div class="lds-dual-ring"></div>
@@ -22,7 +22,7 @@
           <li><a href="{{ route('home') }}">Главная</a></li>
           <li><a href="{{ url('/#searchWrapper') }}">Поиск напарника</a></li>
           @if (Auth::user() && Auth::user()->is_admin)
-          <li><a href="{{ route('dashboard') }}">Панель управления</a></li>
+          <li><a href="{{ route('users') }}">Пользователи</a></li>
           @endif
         </ul>
       </nav>
@@ -48,7 +48,7 @@
           <li><a href="{{ route('home') }}">Главная</a></li>
           <li><a href="{{ url('/#searchWrapper') }}" >Поиск напарников</a></li>
           @if (Auth::user() && Auth::user()->is_admin)
-          <li><a href="{{ route('dashboard') }}">Панель управления</a></li>
+          <li><a href="{{ route('users') }}">Пользователи</a></li>
           @endif
         </ul>
 
@@ -83,14 +83,11 @@
 <footer class="footer">
  <div class="container">
   <div class="footer-wrapper">
-    <span>Если появились вопросы, пишите на почту: <a href="mailto:inwhite@mail.ru">inwhite@mail.ru</a></span>
+    <span>Если появились вопросы, пишите на почту: <a href="mailto:inwhiteapp@gmail.com">inwhiteapp@gmail.com</a></span>
 
     <ul>
       <li><a href="{{ route('home') }}">Главная</a></li>
       <li><a href="{{ url('/#searchWrapper') }}">Поиск напарников</a></li>
-      @if (Auth::user() && Auth::user()->is_admin)
-      <li><a href="{{ route('dashboard') }}">Панель управления</a></li>
-      @endif
     </ul>
   </div>
   <!-- footer-wrapper -->
@@ -100,9 +97,6 @@
 <!-- footer -->
 
 <script src="{{ mix('js/app.js') }}"></script>
-<script>
-    new WOW().init();
-</script>
 
 </body>
 </html>

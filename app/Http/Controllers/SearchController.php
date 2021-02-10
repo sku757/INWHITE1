@@ -23,8 +23,12 @@ class SearchController extends Controller
                                 $query->where('rang->dota', $request->input('rang.dota'));
                             }
 
-                            if ($request->input('roles')) {
-                                $query->whereJsonContains('roles', $request->input('roles', []));
+                            if (($roles = $request->input('roles')) !== null) {
+                                $query->where(function ($query) use ($roles) {
+                                    foreach ($roles as $role) {
+                                        $query->orWhereJsonContains('roles', $role);
+                                    }
+                                });
                             }
                         break;
                         case 'CS': 

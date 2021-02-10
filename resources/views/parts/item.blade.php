@@ -1,4 +1,4 @@
-@foreach ($users as $user)
+@foreach ($users as $index => $user)
 <div class="slide-box">
   <div class="slide">
     <div class="slide__wrap">
