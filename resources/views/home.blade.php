@@ -77,7 +77,7 @@
       <!-- main-slider-wrapper__item -->
 
       <div class="main-slider-wrapper__item">
-        <img src="img/images/header/cs.png" alt="slide-2">
+        <img src="img/images/header/bom.png" alt="slide-2">
       </div>
       <!-- main-slider-wrapper__item -->
     </div>
