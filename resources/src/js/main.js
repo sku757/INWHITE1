@@ -14,7 +14,7 @@ $(function () {
 				new WOW().init();
 			}
 		}, 200);
-	}, 1000);
+	}, 3000);
 
 	// main slider init
 	$('.main-slider-wrapper').slick({

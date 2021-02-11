@@ -39,6 +39,7 @@ class SearchController extends Controller
                     }
                 });
             })
+            ->orderByRaw('rand()')
             ->get();
 
         abort_if($users->isEmpty(), 404);
