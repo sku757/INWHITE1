@@ -25,7 +25,7 @@
             <tr>
                 <td>{{ $user->id }}</td>
                 <td><img src="{{ $user->avatar }}" alt=""></td>
-                <td class="{{ $user->online ? 'online' : 'offline'}}">{{ $user->username }} {{ $user->is_admin ? '(admin)' : '' }}</td>
+                <td class="{{ $user->online ? 'online' : 'offline' }} {{ $user->profile->show_in_search ?: 'no-search' }}">{{ $user->username }} {{ $user->is_admin ? '(admin)' : '' }}</td>
                 <td>{{ $user->last_login->format('d.m.Y H:i') }}</td>
                 <td>{{ $user->last_ip }}</td>
                 <td>{{ $user->profile->game }}</td>
