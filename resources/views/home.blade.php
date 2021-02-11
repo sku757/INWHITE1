@@ -72,12 +72,12 @@
 
     <div class="main-slider-wrapper">
       <div class="main-slider-wrapper__item">
-        <img src="img/images/header/slide-1.png" alt="slide-1">
+        <img src="img/images/header/ter.png" alt="slide-1">
       </div>
       <!-- main-slider-wrapper__item -->
 
       <div class="main-slider-wrapper__item">
-        <img src="img/images/header/slide-2.png" alt="slide-2">
+        <img src="img/images/header/cs.png" alt="slide-2">
       </div>
       <!-- main-slider-wrapper__item -->
     </div>

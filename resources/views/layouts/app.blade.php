@@ -7,6 +7,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body class="{{ Route::is('home') ? 'has-wow' : '' }}">
 
